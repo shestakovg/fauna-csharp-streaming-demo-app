@@ -1,7 +1,7 @@
 # Fauna database streaming demo application
 
 This is a sample C# application that demostrates how we can use fauna driver to listen to update events of a document in a database.
-Updater application makes changes in database:
+Editor application makes changes in database:
 - creates sample collection Categories
 - creates index all_Categories
 - creates one sample document in collection
