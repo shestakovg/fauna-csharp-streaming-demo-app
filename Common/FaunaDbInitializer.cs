@@ -11,9 +11,9 @@ namespace Common
         public static readonly string COLLECTION_NAME = "Categories";
         public static readonly string INDEX_NAME = "all_Categories";
 
-        public static string SECRET = "PUT YOUR SECTET HERE";
+        public static string ROOT_KEY = "PUT YOUR ROOT KEY HERE";
         public static FaunaClient GetClient() =>
-            new FaunaClient(endpoint: ENDPOINT, secret: SECRET);
+            new FaunaClient(endpoint: ENDPOINT, secret: ROOT_KEY);
         
         public static async Task InitializeDatabase()
         {
