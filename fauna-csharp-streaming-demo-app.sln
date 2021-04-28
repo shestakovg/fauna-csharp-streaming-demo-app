@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31205.134
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UpdaterApp", "UpdaterApp\UpdaterApp.csproj", "{352A33D9-33D6-4A50-B502-6D52419362B5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{B6F688BB-F2CF-498A-B2FF-D6BE0E18FBAF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Watcher", "Watcher\Watcher.csproj", "{253A7A7A-F3DC-458B-84BB-64BCD3A5612E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{352A33D9-33D6-4A50-B502-6D52419362B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{352A33D9-33D6-4A50-B502-6D52419362B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{352A33D9-33D6-4A50-B502-6D52419362B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{352A33D9-33D6-4A50-B502-6D52419362B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6F688BB-F2CF-498A-B2FF-D6BE0E18FBAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6F688BB-F2CF-498A-B2FF-D6BE0E18FBAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6F688BB-F2CF-498A-B2FF-D6BE0E18FBAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6F688BB-F2CF-498A-B2FF-D6BE0E18FBAF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{253A7A7A-F3DC-458B-84BB-64BCD3A5612E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{253A7A7A-F3DC-458B-84BB-64BCD3A5612E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{253A7A7A-F3DC-458B-84BB-64BCD3A5612E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{253A7A7A-F3DC-458B-84BB-64BCD3A5612E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B5435C07-2DE8-4692-B1FD-03137916135E}
+	EndGlobalSection
+EndGlobal

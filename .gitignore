@@ -1,0 +1,10 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/Common/bin/Debug/net5.0
+/Common/obj
+/UpdaterApp/bin/Debug/net5.0
+/UpdaterApp/obj
+/Watcher/bin/Debug/net5.0
+/Watcher/obj
