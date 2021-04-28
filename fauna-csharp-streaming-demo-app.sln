@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31205.134
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UpdaterApp", "UpdaterApp\UpdaterApp.csproj", "{352A33D9-33D6-4A50-B502-6D52419362B5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Editor", "UpdaterApp\Editor.csproj", "{352A33D9-33D6-4A50-B502-6D52419362B5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{B6F688BB-F2CF-498A-B2FF-D6BE0E18FBAF}"
 EndProject

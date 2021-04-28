@@ -6,7 +6,7 @@ using static FaunaDB.Query.Language;
 using Common;
 
 
-namespace UpdaterApp
+namespace Editor
 {
     class Program
     {
@@ -33,8 +33,7 @@ namespace UpdaterApp
         //Update data in database
         private static async Task ProcessData(Value[] values, FaunaClient client)
         {
-            var done = new TaskCompletionSource<object>();
-            string reference = values.Length > 0 ? (values[0] as RefV).Id : "0";
+            string reference = (values[0] as RefV).Id;
             Value categoryValue = await client.Query(Get(Ref(Collection(FaunaDbInitializer.COLLECTION_NAME), reference)));
 
             Category category = Decoder.Decode<Category>(categoryValue.At("data"));
