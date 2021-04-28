@@ -40,6 +40,6 @@ ObjectV(type: StringV(start),txn: LongV(1619548421450000),event: LongV(161954842
 ```
 and "Enter new category name" for Editor application. 
 Make some changes in Editor application (Enter new category name and rating) and you see update events in Watcher.
-
+```
 ObjectV(type: StringV(version),txn: LongV(1619618510540000),event: ObjectV(action: StringV(update),document: ObjectV(ref: RefV(id = "297124070162432513", collection = RefV(id = "Categories", collection = RefV(id = "collections"))),ts: LongV(1619618510540000),data: ObjectV(name: StringV(category 22),rating: LongV(1234)))))
-
+```
