@@ -10,7 +10,8 @@ Watcher is listening changes of the document
 
 ## Setup a database for this project
 
-You should create empty Fauna database. Visit to https://dashboard.fauna.com/ and hit the button "New database". ![image](https://user-images.githubusercontent.com/11041454/116414049-d29fe680-a840-11eb-9a35-b0a9d32b2ed3.png). Enter any database name and hit Save.
+You should create empty Fauna database. Visit to https://dashboard.fauna.com/ and hit the button "New database". ![image](https://user-images.githubusercontent.com/11041454/116414049-d29fe680-a840-11eb-9a35-b0a9d32b2ed3.png). 
+Enter any database name and hit Save.
 
 After that go to Security page and create new key for role Admin. Copy new key value.
 
