@@ -10,14 +10,15 @@ namespace Common
         private static readonly string ENDPOINT = "https://db.fauna.com:443";
         public static readonly string COLLECTION_NAME = "Categories";
         public static readonly string INDEX_NAME = "all_Categories";
-        public static FaunaClient GetClient(string secret) =>
-            new FaunaClient(endpoint: ENDPOINT, secret: secret);
+
+        public static string SECRET = "PUT YOUR SECTET HERE";
+        public static FaunaClient GetClient() =>
+            new FaunaClient(endpoint: ENDPOINT, secret: SECRET);
         
         public static async Task InitializeDatabase()
         {
-            //var done = new TaskCompletionSource<object>();
             //Initialize Fauna client
-            var client = GetClient("fnAEH0EIp-ACBw0RIi3jh_v4riRQyQK6MLZ_GvN-");
+            var client = GetClient();
             //Checkig if collection already exists
             Value exist = await client.Query(Exists(Collection(COLLECTION_NAME)));
 

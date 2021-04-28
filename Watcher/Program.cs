@@ -12,7 +12,7 @@ namespace Watcher
     {
         static void Main(string[] args)
         {
-            var client = FaunaDbInitializer.GetClient("fnAEH0EIp-ACBw0RIi3jh_v4riRQyQK6MLZ_GvN-");
+            var client = FaunaDbInitializer.GetClient();
             Watch(client).Wait();
         }
 
@@ -27,10 +27,18 @@ namespace Watcher
         {
             var done = new TaskCompletionSource<object>();
             string reference = Task.Run(() => GetReference(client)).Result;
-            var docRef = Get(Ref(Collection("Categories"), reference));
+            var docRef = Get(Ref(Collection(FaunaDbInitializer.COLLECTION_NAME), reference));
 
+            // create a data provider
             var provider = await client.Stream(docRef);
+            // a collection for storage of incoming events from the provider
             List<Value> events = new List<Value>();
+
+            // creating a subscriber
+            // it takes 3 lambdas that describe the following:
+            // - next event processing
+            // - error processing
+            // - completion processing
             var monitor = new StreamingEventMonitor(
                 value =>
                 {
@@ -52,6 +60,7 @@ namespace Watcher
 
             // subscribe to data provider
             monitor.Subscribe(provider);
+
             await done.Task;
 
             // clear the subscription

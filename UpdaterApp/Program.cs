@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using FaunaDB.Client;
 using FaunaDB.Types;
 using System.Threading.Tasks;
@@ -14,14 +13,15 @@ namespace UpdaterApp
         static  void Main(string[] args)
         {
             Run().Wait();
-            Console.WriteLine("Hello World!");
         }
 
         private static async Task Run()
         {
+            //init database with default values
             await FaunaDbInitializer.InitializeDatabase();
 
-            var client = FaunaDbInitializer.GetClient("fnAEH0EIp-ACBw0RIi3jh_v4riRQyQK6MLZ_GvN-");
+            //get reference from collection
+            var client = FaunaDbInitializer.GetClient();
             Value result = await client.Query(Paginate(Match(Index(FaunaDbInitializer.INDEX_NAME))));
             IResult<Value[]> data = result.At("data").To<Value[]>();
             data.Match(
@@ -30,34 +30,26 @@ namespace UpdaterApp
             );
         }
 
+        //Update data in database
         private static async Task ProcessData(Value[] values, FaunaClient client)
         {
             var done = new TaskCompletionSource<object>();
             string reference = values.Length > 0 ? (values[0] as RefV).Id : "0";
-            Category category = null;
-            try
-            {
-                Value categoryValue = await client.Query(Get(Ref(Collection(FaunaDbInitializer.COLLECTION_NAME), reference)));
+            Value categoryValue = await client.Query(Get(Ref(Collection(FaunaDbInitializer.COLLECTION_NAME), reference)));
 
-                category = Decoder.Decode<Category>(categoryValue.At("data"));
-            }
-            catch(Exception ex)
-            {
+            Category category = Decoder.Decode<Category>(categoryValue.At("data"));
 
-            }
             for (int i = 0; i < 20; i++)
             {
                 Console.WriteLine("Enter new category name");
-                string categoryName = Console.ReadLine();
+                category.Name = Console.ReadLine();
                 Console.WriteLine("Enter new category rating");
-                int categoryRating = Convert.ToInt32(Console.ReadLine());
-                category.Name = categoryName;
-                category.Rating = categoryRating;
+                category.Rating = Convert.ToInt32(Console.ReadLine());
 
                 await client.Query(
                         Update(
                                 Ref(Collection(FaunaDbInitializer.COLLECTION_NAME), reference),
-                                Obj("data", FaunaDB.Types.Encoder.Encode(category))
+                                Obj("data", Encoder.Encode(category))
                             )
                     );
                 Console.WriteLine("Record has been updated");
