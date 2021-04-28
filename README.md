@@ -23,17 +23,17 @@ Watcher is listening changes of the document
 ## Run the application
 A repo contains a C# solution (with .NET 5.0 target framework) that you can open in your favourite IDE.
 You can also switch to a project directory in your terminal and run:
-
+```
 cd ./fauna-csharp-streaming-demo-app/Editor
 
 dotnet run 
-
+```
 and 
-
+```
 cd ./fauna-csharp-streaming-demo-app/Watcher
 
 dotnet run 
-
+```
 If you set up everything correctly you should see a "start" event in the terminal for Watcher application:
 ```
 ObjectV(type: StringV(start),txn: LongV(1619548421450000),event: LongV(1619548421450000))
